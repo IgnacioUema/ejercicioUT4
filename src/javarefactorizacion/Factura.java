@@ -37,3 +37,5 @@ public static void main(String[] args) {
     imprimirFactura(nombre, precio, cantidad, total); 
 }
  }
+
+/* Prueba de una rama secundaría */
