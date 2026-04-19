@@ -37,3 +37,7 @@ public static void main(String[] args) {
     imprimirFactura(nombre, precio, cantidad, total); 
 }
  }
+
+
+/* Rama secundaria se vuelve el main */
+
