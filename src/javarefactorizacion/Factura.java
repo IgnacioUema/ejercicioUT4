@@ -1,43 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package javarefactorizacion;
 
 /**
- *
+ * Clase principal que ejecuta el programa.
+ * 
+ * Se encarga de crear un cliente, un pedido
+ * y mostrar la factura correspondiente por consola.
+ * 
  * @author Nacho
  */
 public class Factura {
 
-public static double calcularPrecioTotal(double precio, int cantidad) { 
-double totalSinDescuento = precio * cantidad;
-    return aplicarDescuento(totalSinDescuento, cantidad);
+    /**
+     * Método principal que inicia la ejecución del programa.
+     * 
+     * @param args argumentos de línea de comandos (no utilizados)
+     */
+    public static void main(String[] args) {
+
+        // Crear cliente
+        Ticket Juan = new Ticket("Juan");
+
+        // Crear pedido
+        Pedido uno = new Pedido("Patatas");
+        uno.setCantidad(15);
+        uno.setPrecio(20.0);
+
+        // Imprimir factura
+        Juan.imprimirFactura(
+                Juan.getNombreCliente(),
+                uno.getNombreProducto(),
+                uno.getPrecio(),
+                uno.getCantidad(),
+                uno.calcularPrecioTotal()
+        );
+    }
 }
-
-public static double aplicarDescuento(double totalSinDescuento, int cantidad){
-    double calculoDescuento = totalSinDescuento;
-    if (cantidad > 10) { calculoDescuento = totalSinDescuento - (totalSinDescuento * 0.1); 
-} 
-return calculoDescuento; 
-
-} public static void imprimirFactura(String nombre, double precio, int cantidad, double total) { 
-
-System.out.println("Cliente: " + nombre); 
-System.out.println("Cantidad: " + cantidad);
-System.out.println("Precio unitario: " + precio); 
-System.out.println("Total a pagar: " + total);
-}
- 
-public static void main(String[] args) {
-    double precio = 15.5;
-    int cantidad = 20;
-    String nombre = "Juan";
-    double total = calcularPrecioTotal( precio, cantidad);
-    imprimirFactura(nombre, precio, cantidad, total); 
-}
- }
-
-
-/* Rama secundaria se vuelve el main */
-
